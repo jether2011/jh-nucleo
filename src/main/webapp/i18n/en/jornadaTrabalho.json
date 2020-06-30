@@ -1,0 +1,29 @@
+{
+  "nucleoApp": {
+    "jornadaTrabalho": {
+      "home": {
+        "title": "Jornada Trabalhos",
+        "createLabel": "Create a new Jornada Trabalho",
+        "createOrEditLabel": "Create or edit a Jornada Trabalho",
+        "notFound": "No Jornada Trabalhos found"
+      },
+      "created": "A new Jornada Trabalho is created with identifier {{ param }}",
+      "updated": "A Jornada Trabalho is updated with identifier {{ param }}",
+      "deleted": "A Jornada Trabalho is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Jornada Trabalho {{ id }}?"
+      },
+      "detail": {
+        "title": "Jornada Trabalho"
+      },
+      "nome": "Nome",
+      "descricao": "Descricao",
+      "horainicio": "Horainicio",
+      "duracao": "Duracao",
+      "created": "Created",
+      "updated": "Updated",
+      "plano": "Plano",
+      "diaSemana": "Dia Semana"
+    }
+  }
+}

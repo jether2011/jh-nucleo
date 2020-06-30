@@ -1,0 +1,98 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="alerta">
+            <h2><span jhiTranslate="nucleoApp.alerta.detail.title">Alerta</span> {{ alerta.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="nucleoApp.alerta.nome">Nome</span></dt>
+                <dd>
+                    <span>{{ alerta.nome }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.alerta.contato">Contato</span></dt>
+                <dd>
+                    <span>{{ alerta.contato }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.alerta.duracao">Duracao</span></dt>
+                <dd>
+                    <span>{{ alerta.duracao }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.alerta.automatico">Automatico</span></dt>
+                <dd>
+                    <span>{{ alerta.automatico }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.alerta.critico">Critico</span></dt>
+                <dd>
+                    <span>{{ alerta.critico }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.alerta.observacao">Observacao</span></dt>
+                <dd>
+                    <span>{{ alerta.observacao }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.alerta.alertaPaiId">Alerta Pai Id</span></dt>
+                <dd>
+                    <span>{{ alerta.alertaPaiId }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.alerta.created">Created</span></dt>
+                <dd>
+                    <span>{{ alerta.created }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.alerta.updated">Updated</span></dt>
+                <dd>
+                    <span>{{ alerta.updated }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.alerta.planoRecurso">Plano Recurso</span></dt>
+                <dd>
+                    <div *ngIf="alerta.planoRecursoId">
+                        <a [routerLink]="['/plano-recurso', alerta.planoRecursoId, 'view']">{{ alerta.planoRecursoId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.alerta.alvo">Alvo</span></dt>
+                <dd>
+                    <div *ngIf="alerta.alvoId">
+                        <a [routerLink]="['/alvo', alerta.alvoId, 'view']">{{ alerta.alvoId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.alerta.operadorUsuario">Operador Usuario</span></dt>
+                <dd>
+                    <div *ngIf="alerta.operadorUsuarioId">
+                        <a [routerLink]="['/usuario', alerta.operadorUsuarioId, 'view']">{{ alerta.operadorUsuarioId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.alerta.alertaRisco">Alerta Risco</span></dt>
+                <dd>
+                    <div *ngIf="alerta.alertaRiscoId">
+                        <a [routerLink]="['/alerta-risco', alerta.alertaRiscoId, 'view']">{{ alerta.alertaRiscoId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.alerta.tempestadeNivel">Tempestade Nivel</span></dt>
+                <dd>
+                    <div *ngIf="alerta.tempestadeNivelId">
+                        <a [routerLink]="['/tempestade-nivel', alerta.tempestadeNivelId, 'view']">{{ alerta.tempestadeNivelId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.alerta.alertaTipo">Alerta Tipo</span></dt>
+                <dd>
+                    <div *ngIf="alerta.alertaTipoId">
+                        <a [routerLink]="['/alerta-tipo', alerta.alertaTipoId, 'view']">{{ alerta.alertaTipoId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/alerta', alerta.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+{
+  "nucleoApp": {
+    "usuarioPerfil": {
+      "home": {
+        "title": "Usuario Perfils",
+        "createLabel": "Criar novo Usuario Perfil",
+        "createOrEditLabel": "Criar ou editar Usuario Perfil",
+        "notFound": "Nenhum Usuario Perfil encontrado"
+      },
+      "created": "Um novo Usuario Perfil foi criado com o identificador {{ param }}",
+      "updated": "Um Usuario Perfil foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Usuario Perfil foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Usuario Perfil {{ id }}?"
+      },
+      "detail": {
+        "title": "Usuario Perfil"
+      },
+      "name": "Name",
+      "descricao": "Descricao",
+      "created": "Created",
+      "updated": "Updated",
+      "usuario": "Usuario",
+      "perfil": "Perfil"
+    }
+  }
+}

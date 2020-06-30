@@ -1,0 +1,50 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="ventoVmFaixa">
+            <h2><span jhiTranslate="nucleoApp.ventoVmFaixa.detail.title">Vento Vm Faixa</span> {{ ventoVmFaixa.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="nucleoApp.ventoVmFaixa.name">Name</span></dt>
+                <dd>
+                    <span>{{ ventoVmFaixa.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.ventoVmFaixa.descricao">Descricao</span></dt>
+                <dd>
+                    <span>{{ ventoVmFaixa.descricao }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.ventoVmFaixa.de">De</span></dt>
+                <dd>
+                    <span>{{ ventoVmFaixa.de }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.ventoVmFaixa.ate">Ate</span></dt>
+                <dd>
+                    <span>{{ ventoVmFaixa.ate }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.ventoVmFaixa.created">Created</span></dt>
+                <dd>
+                    <span>{{ ventoVmFaixa.created }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.ventoVmFaixa.updated">Updated</span></dt>
+                <dd>
+                    <span>{{ ventoVmFaixa.updated }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/vento-vm-faixa', ventoVmFaixa.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

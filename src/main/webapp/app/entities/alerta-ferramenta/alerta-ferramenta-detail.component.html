@@ -1,0 +1,54 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="alertaFerramenta">
+            <h2><span jhiTranslate="nucleoApp.alertaFerramenta.detail.title">Alerta Ferramenta</span> {{ alertaFerramenta.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="nucleoApp.alertaFerramenta.nome">Nome</span></dt>
+                <dd>
+                    <span>{{ alertaFerramenta.nome }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.alertaFerramenta.descricao">Descricao</span></dt>
+                <dd>
+                    <span>{{ alertaFerramenta.descricao }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.alertaFerramenta.created">Created</span></dt>
+                <dd>
+                    <span>{{ alertaFerramenta.created }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.alertaFerramenta.updated">Updated</span></dt>
+                <dd>
+                    <span>{{ alertaFerramenta.updated }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.alertaFerramenta.alerta">Alerta</span></dt>
+                <dd>
+                    <div *ngIf="alertaFerramenta.alertaId">
+                        <a [routerLink]="['/alerta', alertaFerramenta.alertaId, 'view']">{{ alertaFerramenta.alertaId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.alertaFerramenta.ferramenta">Ferramenta</span></dt>
+                <dd>
+                    <div *ngIf="alertaFerramenta.ferramentaId">
+                        <a [routerLink]="['/ferramenta', alertaFerramenta.ferramentaId, 'view']">{{ alertaFerramenta.ferramentaId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/alerta-ferramenta', alertaFerramenta.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,108 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="alvo">
+            <h2><span jhiTranslate="nucleoApp.alvo.detail.title">Alvo</span> {{ alvo.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="nucleoApp.alvo.nome">Nome</span></dt>
+                <dd>
+                    <span>{{ alvo.nome }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.alvo.nomeReduzido">Nome Reduzido</span></dt>
+                <dd>
+                    <span>{{ alvo.nomeReduzido }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.alvo.descricao">Descricao</span></dt>
+                <dd>
+                    <span>{{ alvo.descricao }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.alvo.primeiroPonto">Primeiro Ponto</span></dt>
+                <dd>
+                    <span>{{ alvo.primeiroPonto }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.alvo.ultimoPonto">Ultimo Ponto</span></dt>
+                <dd>
+                    <span>{{ alvo.ultimoPonto }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.alvo.horarioLiberacao">Horario Liberacao</span></dt>
+                <dd>
+                    <span>{{ alvo.horarioLiberacao }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.alvo.horario">Horario</span></dt>
+                <dd>
+                    <span>{{ alvo.horario }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.alvo.duracao">Duracao</span></dt>
+                <dd>
+                    <span>{{ alvo.duracao }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.alvo.duracaoAtual">Duracao Atual</span></dt>
+                <dd>
+                    <span>{{ alvo.duracaoAtual }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.alvo.dataDesativado">Data Desativado</span></dt>
+                <dd>
+                    <span>{{ alvo.dataDesativado }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.alvo.coordenadasAlertaPontos">Coordenadas Alerta Pontos</span></dt>
+                <dd>
+                    <span>{{ alvo.coordenadasAlertaPontos }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.alvo.coordenadasLiberacaoPontos">Coordenadas Liberacao Pontos</span></dt>
+                <dd>
+                    <span>{{ alvo.coordenadasLiberacaoPontos }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.alvo.telegramTokenBot">Telegram Token Bot</span></dt>
+                <dd>
+                    <span>{{ alvo.telegramTokenBot }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.alvo.telegramChatId">Telegram Chat Id</span></dt>
+                <dd>
+                    <span>{{ alvo.telegramChatId }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.alvo.horarioBloqueioNotificacao">Horario Bloqueio Notificacao</span></dt>
+                <dd>
+                    <span>{{ alvo.horarioBloqueioNotificacao }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.alvo.coordenadasOriginalPontos">Coordenadas Original Pontos</span></dt>
+                <dd>
+                    <span>{{ alvo.coordenadasOriginalPontos }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.alvo.ativo">Ativo</span></dt>
+                <dd>
+                    <span>{{ alvo.ativo }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.alvo.created">Created</span></dt>
+                <dd>
+                    <span>{{ alvo.created }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.alvo.updated">Updated</span></dt>
+                <dd>
+                    <span>{{ alvo.updated }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.alvo.plano">Plano</span></dt>
+                <dd>
+                    <div *ngIf="alvo.planoId">
+                        <a [routerLink]="['/plano', alvo.planoId, 'view']">{{ alvo.planoId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/alvo', alvo.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

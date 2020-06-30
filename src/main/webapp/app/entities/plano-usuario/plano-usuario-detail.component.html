@@ -1,0 +1,54 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="planoUsuario">
+            <h2><span jhiTranslate="nucleoApp.planoUsuario.detail.title">Plano Usuario</span> {{ planoUsuario.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="nucleoApp.planoUsuario.name">Name</span></dt>
+                <dd>
+                    <span>{{ planoUsuario.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.planoUsuario.descricao">Descricao</span></dt>
+                <dd>
+                    <span>{{ planoUsuario.descricao }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.planoUsuario.created">Created</span></dt>
+                <dd>
+                    <span>{{ planoUsuario.created }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.planoUsuario.updated">Updated</span></dt>
+                <dd>
+                    <span>{{ planoUsuario.updated }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.planoUsuario.id">Id</span></dt>
+                <dd>
+                    <div *ngIf="planoUsuario.idId">
+                        <a [routerLink]="['/plano', planoUsuario.idId, 'view']">{{ planoUsuario.idId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.planoUsuario.usuario">Usuario</span></dt>
+                <dd>
+                    <div *ngIf="planoUsuario.usuarioId">
+                        <a [routerLink]="['/usuario', planoUsuario.usuarioId, 'view']">{{ planoUsuario.usuarioId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/plano-usuario', planoUsuario.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

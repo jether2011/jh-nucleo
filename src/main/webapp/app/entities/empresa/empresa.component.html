@@ -1,0 +1,89 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="nucleoApp.empresa.home.title">Empresas</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-empresa" [routerLink]="['/empresa/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="nucleoApp.empresa.home.createLabel">
+            Create a new Empresa
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="empresas?.length === 0">
+        <span jhiTranslate="nucleoApp.empresa.home.notFound">No empresas found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="empresas && empresas.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="nome"><span jhiTranslate="nucleoApp.empresa.nome">Nome</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="descricao"><span jhiTranslate="nucleoApp.empresa.descricao">Descricao</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="email"><span jhiTranslate="nucleoApp.empresa.email">Email</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="titulo"><span jhiTranslate="nucleoApp.empresa.titulo">Titulo</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="nomeReduzido"><span jhiTranslate="nucleoApp.empresa.nomeReduzido">Nome Reduzido</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="logo"><span jhiTranslate="nucleoApp.empresa.logo">Logo</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="apelido"><span jhiTranslate="nucleoApp.empresa.apelido">Apelido</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="observacao"><span jhiTranslate="nucleoApp.empresa.observacao">Observacao</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="created"><span jhiTranslate="nucleoApp.empresa.created">Created</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="updated"><span jhiTranslate="nucleoApp.empresa.updated">Updated</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let empresa of empresas ;trackBy: trackId">
+                    <td><a [routerLink]="['/empresa', empresa.id, 'view']">{{ empresa.id }}</a></td>
+                    <td>{{ empresa.nome }}</td>
+                    <td>{{ empresa.descricao }}</td>
+                    <td>{{ empresa.email }}</td>
+                    <td>{{ empresa.titulo }}</td>
+                    <td>{{ empresa.nomeReduzido }}</td>
+                    <td>{{ empresa.logo }}</td>
+                    <td>{{ empresa.apelido }}</td>
+                    <td>{{ empresa.observacao }}</td>
+                    <td>{{ empresa.created | date:'medium' }}</td>
+                    <td>{{ empresa.updated | date:'medium' }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/empresa', empresa.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/empresa', empresa.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(empresa)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="empresas && empresas.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+{
+  "nucleoApp": {
+    "tempestadeProbabilidade": {
+      "home": {
+        "title": "Tempestade Probabilidades",
+        "createLabel": "Create a new Tempestade Probabilidade",
+        "createOrEditLabel": "Create or edit a Tempestade Probabilidade",
+        "notFound": "No Tempestade Probabilidades found"
+      },
+      "created": "A new Tempestade Probabilidade is created with identifier {{ param }}",
+      "updated": "A Tempestade Probabilidade is updated with identifier {{ param }}",
+      "deleted": "A Tempestade Probabilidade is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Tempestade Probabilidade {{ id }}?"
+      },
+      "detail": {
+        "title": "Tempestade Probabilidade"
+      },
+      "name": "Name",
+      "descricao": "Descricao",
+      "faixa": "Faixa",
+      "created": "Created",
+      "updated": "Updated"
+    }
+  }
+}

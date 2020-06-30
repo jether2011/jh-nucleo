@@ -1,0 +1,95 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="nucleoApp.planoLayer.home.title">Plano Layers</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-plano-layer" [routerLink]="['/plano-layer/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="nucleoApp.planoLayer.home.createLabel">
+            Create a new Plano Layer
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="planoLayers?.length === 0">
+        <span jhiTranslate="nucleoApp.planoLayer.home.notFound">No planoLayers found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="planoLayers && planoLayers.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="name"><span jhiTranslate="nucleoApp.planoLayer.name">Name</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="descricao"><span jhiTranslate="nucleoApp.planoLayer.descricao">Descricao</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="created"><span jhiTranslate="nucleoApp.planoLayer.created">Created</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="updated"><span jhiTranslate="nucleoApp.planoLayer.updated">Updated</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="planoId"><span jhiTranslate="nucleoApp.planoLayer.plano">Plano</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="layerId"><span jhiTranslate="nucleoApp.planoLayer.layer">Layer</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="alvoId"><span jhiTranslate="nucleoApp.planoLayer.alvo">Alvo</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let planoLayer of planoLayers ;trackBy: trackId">
+                    <td><a [routerLink]="['/plano-layer', planoLayer.id, 'view']">{{ planoLayer.id }}</a></td>
+                    <td>{{ planoLayer.name }}</td>
+                    <td>{{ planoLayer.descricao }}</td>
+                    <td>{{ planoLayer.created | date:'medium' }}</td>
+                    <td>{{ planoLayer.updated | date:'medium' }}</td>
+                    <td>
+                        <div *ngIf="planoLayer.planoId">
+                            <a [routerLink]="['/plano', planoLayer.planoId , 'view']" >{{ planoLayer.planoId }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="planoLayer.layerId">
+                            <a [routerLink]="['/layer', planoLayer.layerId , 'view']" >{{ planoLayer.layerId }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="planoLayer.alvoId">
+                            <a [routerLink]="['/alvo', planoLayer.alvoId , 'view']" >{{ planoLayer.alvoId }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/plano-layer', planoLayer.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/plano-layer', planoLayer.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(planoLayer)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="planoLayers && planoLayers.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+        </div>
+    </div>
+</div>

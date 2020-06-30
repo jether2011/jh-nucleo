@@ -1,0 +1,113 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="nucleoApp.plano.home.title">Planos</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-plano" [routerLink]="['/plano/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="nucleoApp.plano.home.createLabel">
+            Create a new Plano
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="planos?.length === 0">
+        <span jhiTranslate="nucleoApp.plano.home.notFound">No planos found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="planos && planos.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="name"><span jhiTranslate="nucleoApp.plano.name">Name</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="descricao"><span jhiTranslate="nucleoApp.plano.descricao">Descricao</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="horarioPrevisto"><span jhiTranslate="nucleoApp.plano.horarioPrevisto">Horario Previsto</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="trackingAtivo"><span jhiTranslate="nucleoApp.plano.trackingAtivo">Tracking Ativo</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="plrAtivo"><span jhiTranslate="nucleoApp.plano.plrAtivo">Plr Ativo</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="codigoWidgetPrevisao"><span jhiTranslate="nucleoApp.plano.codigoWidgetPrevisao">Codigo Widget Previsao</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="kmlAlvo"><span jhiTranslate="nucleoApp.plano.kmlAlvo">Kml Alvo</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="zoomMin"><span jhiTranslate="nucleoApp.plano.zoomMin">Zoom Min</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dtInicioContrato"><span jhiTranslate="nucleoApp.plano.dtInicioContrato">Dt Inicio Contrato</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dataFimContrato"><span jhiTranslate="nucleoApp.plano.dataFimContrato">Data Fim Contrato</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="horarioMonitInicio"><span jhiTranslate="nucleoApp.plano.horarioMonitInicio">Horario Monit Inicio</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="horarioMonitFinal"><span jhiTranslate="nucleoApp.plano.horarioMonitFinal">Horario Monit Final</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="blocos"><span jhiTranslate="nucleoApp.plano.blocos">Blocos</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="extent"><span jhiTranslate="nucleoApp.plano.extent">Extent</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="created"><span jhiTranslate="nucleoApp.plano.created">Created</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="updated"><span jhiTranslate="nucleoApp.plano.updated">Updated</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="empresaId"><span jhiTranslate="nucleoApp.plano.empresa">Empresa</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="planoStatusId"><span jhiTranslate="nucleoApp.plano.planoStatus">Plano Status</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let plano of planos ;trackBy: trackId">
+                    <td><a [routerLink]="['/plano', plano.id, 'view']">{{ plano.id }}</a></td>
+                    <td>{{ plano.name }}</td>
+                    <td>{{ plano.descricao }}</td>
+                    <td>{{ plano.horarioPrevisto }}</td>
+                    <td>{{ plano.trackingAtivo }}</td>
+                    <td>{{ plano.plrAtivo }}</td>
+                    <td>{{ plano.codigoWidgetPrevisao }}</td>
+                    <td>{{ plano.kmlAlvo }}</td>
+                    <td>{{ plano.zoomMin }}</td>
+                    <td>{{ plano.dtInicioContrato | date:'mediumDate' }}</td>
+                    <td>{{ plano.dataFimContrato | date:'mediumDate' }}</td>
+                    <td>{{ plano.horarioMonitInicio }}</td>
+                    <td>{{ plano.horarioMonitFinal }}</td>
+                    <td>{{ plano.blocos }}</td>
+                    <td>{{ plano.extent }}</td>
+                    <td>{{ plano.created | date:'medium' }}</td>
+                    <td>{{ plano.updated | date:'medium' }}</td>
+                    <td>
+                        <div *ngIf="plano.empresaId">
+                            <a [routerLink]="['/empresa', plano.empresaId , 'view']" >{{ plano.empresaId }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="plano.planoStatusId">
+                            <a [routerLink]="['/plano-status', plano.planoStatusId , 'view']" >{{ plano.planoStatusId }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/plano', plano.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/plano', plano.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(plano)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="planos && planos.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+        </div>
+    </div>
+</div>

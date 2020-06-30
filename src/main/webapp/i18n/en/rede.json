@@ -1,0 +1,25 @@
+{
+  "nucleoApp": {
+    "rede": {
+      "home": {
+        "title": "Redes",
+        "createLabel": "Create a new Rede",
+        "createOrEditLabel": "Create or edit a Rede",
+        "notFound": "No Redes found"
+      },
+      "created": "A new Rede is created with identifier {{ param }}",
+      "updated": "A Rede is updated with identifier {{ param }}",
+      "deleted": "A Rede is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Rede {{ id }}?"
+      },
+      "detail": {
+        "title": "Rede"
+      },
+      "name": "Name",
+      "descricao": "Descricao",
+      "created": "Created",
+      "updated": "Updated"
+    }
+  }
+}

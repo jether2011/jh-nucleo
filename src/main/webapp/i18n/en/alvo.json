@@ -1,0 +1,41 @@
+{
+  "nucleoApp": {
+    "alvo": {
+      "home": {
+        "title": "Alvos",
+        "createLabel": "Create a new Alvo",
+        "createOrEditLabel": "Create or edit a Alvo",
+        "notFound": "No Alvos found"
+      },
+      "created": "A new Alvo is created with identifier {{ param }}",
+      "updated": "A Alvo is updated with identifier {{ param }}",
+      "deleted": "A Alvo is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Alvo {{ id }}?"
+      },
+      "detail": {
+        "title": "Alvo"
+      },
+      "nome": "Nome",
+      "nomeReduzido": "Nome Reduzido",
+      "descricao": "Descricao",
+      "primeiroPonto": "Primeiro Ponto",
+      "ultimoPonto": "Ultimo Ponto",
+      "horarioLiberacao": "Horario Liberacao",
+      "horario": "Horario",
+      "duracao": "Duracao",
+      "duracaoAtual": "Duracao Atual",
+      "dataDesativado": "Data Desativado",
+      "coordenadasAlertaPontos": "Coordenadas Alerta Pontos",
+      "coordenadasLiberacaoPontos": "Coordenadas Liberacao Pontos",
+      "telegramTokenBot": "Telegram Token Bot",
+      "telegramChatId": "Telegram Chat Id",
+      "horarioBloqueioNotificacao": "Horario Bloqueio Notificacao",
+      "coordenadasOriginalPontos": "Coordenadas Original Pontos",
+      "ativo": "Ativo",
+      "created": "Created",
+      "updated": "Updated",
+      "plano": "Plano"
+    }
+  }
+}

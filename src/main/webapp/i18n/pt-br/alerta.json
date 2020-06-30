@@ -1,0 +1,36 @@
+{
+  "nucleoApp": {
+    "alerta": {
+      "home": {
+        "title": "Alertas",
+        "createLabel": "Criar novo Alerta",
+        "createOrEditLabel": "Criar ou editar Alerta",
+        "notFound": "Nenhum Alerta encontrado"
+      },
+      "created": "Um novo Alerta foi criado com o identificador {{ param }}",
+      "updated": "Um Alerta foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Alerta foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Alerta {{ id }}?"
+      },
+      "detail": {
+        "title": "Alerta"
+      },
+      "nome": "Nome",
+      "contato": "Contato",
+      "duracao": "Duracao",
+      "automatico": "Automatico",
+      "critico": "Critico",
+      "observacao": "Observacao",
+      "alertaPaiId": "Alerta Pai Id",
+      "created": "Created",
+      "updated": "Updated",
+      "planoRecurso": "Plano Recurso",
+      "alvo": "Alvo",
+      "operadorUsuario": "Operador Usuario",
+      "alertaRisco": "Alerta Risco",
+      "tempestadeNivel": "Tempestade Nivel",
+      "alertaTipo": "Alerta Tipo"
+    }
+  }
+}

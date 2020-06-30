@@ -1,0 +1,39 @@
+{
+  "nucleoApp": {
+    "plano": {
+      "home": {
+        "title": "Planos",
+        "createLabel": "Criar novo Plano",
+        "createOrEditLabel": "Criar ou editar Plano",
+        "notFound": "Nenhum Plano encontrado"
+      },
+      "created": "Um novo Plano foi criado com o identificador {{ param }}",
+      "updated": "Um Plano foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Plano foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Plano {{ id }}?"
+      },
+      "detail": {
+        "title": "Plano"
+      },
+      "name": "Name",
+      "descricao": "Descricao",
+      "horarioPrevisto": "Horario Previsto",
+      "trackingAtivo": "Tracking Ativo",
+      "plrAtivo": "Plr Ativo",
+      "codigoWidgetPrevisao": "Codigo Widget Previsao",
+      "kmlAlvo": "Kml Alvo",
+      "zoomMin": "Zoom Min",
+      "dtInicioContrato": "Dt Inicio Contrato",
+      "dataFimContrato": "Data Fim Contrato",
+      "horarioMonitInicio": "Horario Monit Inicio",
+      "horarioMonitFinal": "Horario Monit Final",
+      "blocos": "Blocos",
+      "extent": "Extent",
+      "created": "Created",
+      "updated": "Updated",
+      "empresa": "Empresa",
+      "planoStatus": "Plano Status"
+    }
+  }
+}

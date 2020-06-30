@@ -1,0 +1,25 @@
+{
+  "nucleoApp": {
+    "boletimPrevObs": {
+      "home": {
+        "title": "Boletim Prev Obs",
+        "createLabel": "Create a new Boletim Prev Obs",
+        "createOrEditLabel": "Create or edit a Boletim Prev Obs",
+        "notFound": "No Boletim Prev Obs found"
+      },
+      "created": "A new Boletim Prev Obs is created with identifier {{ param }}",
+      "updated": "A Boletim Prev Obs is updated with identifier {{ param }}",
+      "deleted": "A Boletim Prev Obs is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Boletim Prev Obs {{ id }}?"
+      },
+      "detail": {
+        "title": "Boletim Prev Obs"
+      },
+      "nome": "Nome",
+      "descricao": "Descricao",
+      "created": "Created",
+      "updated": "Updated"
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "nucleoApp": {
+    "notificacaoEnviada": {
+      "home": {
+        "title": "Notificacao Enviadas",
+        "createLabel": "Criar novo Notificacao Enviada",
+        "createOrEditLabel": "Criar ou editar Notificacao Enviada",
+        "notFound": "Nenhum Notificacao Enviada encontrado"
+      },
+      "created": "Um novo Notificacao Enviada foi criado com o identificador {{ param }}",
+      "updated": "Um Notificacao Enviada foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Notificacao Enviada foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Notificacao Enviada {{ id }}?"
+      },
+      "detail": {
+        "title": "Notificacao Enviada"
+      },
+      "name": "Name",
+      "descricao": "Descricao",
+      "destinatarios": "Destinatarios",
+      "tipo": "Tipo",
+      "status": "Status",
+      "assunto": "Assunto",
+      "enviado": "Enviado",
+      "contador": "Contador",
+      "amazonMessageId": "Amazon Message Id",
+      "amazonDateLog": "Amazon Date Log",
+      "priceInUsd": "Price In Usd",
+      "amazonResposta": "Amazon Resposta",
+      "referenceId": "Reference Id",
+      "created": "Created",
+      "updated": "Updated",
+      "planoRecurso": "Plano Recurso"
+    }
+  }
+}

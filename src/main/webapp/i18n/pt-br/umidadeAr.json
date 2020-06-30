@@ -1,0 +1,25 @@
+{
+  "nucleoApp": {
+    "umidadeAr": {
+      "home": {
+        "title": "Umidade Ars",
+        "createLabel": "Criar novo Umidade Ar",
+        "createOrEditLabel": "Criar ou editar Umidade Ar",
+        "notFound": "Nenhum Umidade Ar encontrado"
+      },
+      "created": "Um novo Umidade Ar foi criado com o identificador {{ param }}",
+      "updated": "Um Umidade Ar foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Umidade Ar foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Umidade Ar {{ id }}?"
+      },
+      "detail": {
+        "title": "Umidade Ar"
+      },
+      "name": "Name",
+      "descricao": "Descricao",
+      "created": "Created",
+      "updated": "Updated"
+    }
+  }
+}

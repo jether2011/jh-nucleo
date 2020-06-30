@@ -1,0 +1,59 @@
+{
+  "name": "PlanoRecursoTipoEnvio",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength", "unique"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "descricao",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "qtd",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "created",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updated",
+      "fieldType": "Instant"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "planoRecurso",
+      "otherEntityRelationshipName": "planoRecursoTipoEnvio",
+      "relationshipValidateRules": "required",
+      "relationshipName": "planoRecurso",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "tipoEnvio",
+      "otherEntityRelationshipName": "planoRecursoTipoEnvio",
+      "relationshipValidateRules": "required",
+      "relationshipName": "tipoEnvio",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20200630033733",
+  "entityTableName": "plano_recurso_tipo_envio",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

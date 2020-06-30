@@ -1,0 +1,28 @@
+{
+  "nucleoApp": {
+    "tipoEnvioIntegrador": {
+      "home": {
+        "title": "Tipo Envio Integradors",
+        "createLabel": "Create a new Tipo Envio Integrador",
+        "createOrEditLabel": "Create or edit a Tipo Envio Integrador",
+        "notFound": "No Tipo Envio Integradors found"
+      },
+      "created": "A new Tipo Envio Integrador is created with identifier {{ param }}",
+      "updated": "A Tipo Envio Integrador is updated with identifier {{ param }}",
+      "deleted": "A Tipo Envio Integrador is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Tipo Envio Integrador {{ id }}?"
+      },
+      "detail": {
+        "title": "Tipo Envio Integrador"
+      },
+      "name": "Name",
+      "descricao": "Descricao",
+      "ativo": "Ativo",
+      "created": "Created",
+      "updated": "Updated",
+      "tipoEnvio": "Tipo Envio",
+      "integrador": "Integrador"
+    }
+  }
+}

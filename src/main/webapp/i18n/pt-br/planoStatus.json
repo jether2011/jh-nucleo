@@ -1,0 +1,25 @@
+{
+  "nucleoApp": {
+    "planoStatus": {
+      "home": {
+        "title": "Plano Statuses",
+        "createLabel": "Criar novo Plano Status",
+        "createOrEditLabel": "Criar ou editar Plano Status",
+        "notFound": "Nenhum Plano Status encontrado"
+      },
+      "created": "Um novo Plano Status foi criado com o identificador {{ param }}",
+      "updated": "Um Plano Status foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Plano Status foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Plano Status {{ id }}?"
+      },
+      "detail": {
+        "title": "Plano Status"
+      },
+      "name": "Name",
+      "descricao": "Descricao",
+      "created": "Created",
+      "updated": "Updated"
+    }
+  }
+}

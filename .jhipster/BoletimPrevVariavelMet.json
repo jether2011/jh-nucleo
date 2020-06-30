@@ -1,0 +1,53 @@
+{
+  "name": "BoletimPrevVariavelMet",
+  "fields": [
+    {
+      "fieldName": "nome",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength", "unique"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "descricao",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "created",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updated",
+      "fieldType": "Instant"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "boletimPrevisao",
+      "otherEntityRelationshipName": "boletimPrevVariavelMet",
+      "relationshipValidateRules": "required",
+      "relationshipName": "boletimPrevisao",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "variavelMeteorologica",
+      "otherEntityRelationshipName": "boletimPrevVariavelMet",
+      "relationshipValidateRules": "required",
+      "relationshipName": "variavelMeteorologica",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20200630031813",
+  "entityTableName": "boletim_prev_variavel_met",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

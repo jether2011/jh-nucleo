@@ -1,0 +1,27 @@
+{
+  "nucleoApp": {
+    "contatoTipoEnvio": {
+      "home": {
+        "title": "Contato Tipo Envios",
+        "createLabel": "Criar novo Contato Tipo Envio",
+        "createOrEditLabel": "Criar ou editar Contato Tipo Envio",
+        "notFound": "Nenhum Contato Tipo Envio encontrado"
+      },
+      "created": "Um novo Contato Tipo Envio foi criado com o identificador {{ param }}",
+      "updated": "Um Contato Tipo Envio foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Contato Tipo Envio foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Contato Tipo Envio {{ id }}?"
+      },
+      "detail": {
+        "title": "Contato Tipo Envio"
+      },
+      "nome": "Nome",
+      "descricao": "Descricao",
+      "created": "Created",
+      "updated": "Updated",
+      "contato": "Contato",
+      "tipoEnvio": "Tipo Envio"
+    }
+  }
+}
