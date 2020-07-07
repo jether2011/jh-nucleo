@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <!--
+        Added the constraints for entity RecursoTemplate.
+    -->
+    <changeSet id="20200707231838-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="recurso_id"
+                                 baseTableName="recurso_template"
+                                 constraintName="fk_recurso_template_recurso_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="recurso"/>
+
+        <addForeignKeyConstraint baseColumnNames="tipo_envio_id"
+                                 baseTableName="recurso_template"
+                                 constraintName="fk_recurso_template_tipo_envio_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tipo_envio"/>
+
+        <addForeignKeyConstraint baseColumnNames="alerta_tipo_id"
+                                 baseTableName="recurso_template"
+                                 constraintName="fk_recurso_template_alerta_tipo_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="alerta_tipo"/>
+
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,102 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="plano">
+            <h2><span jhiTranslate="nucleoApp.plano.detail.title">Plano</span> {{ plano.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="nucleoApp.plano.name">Name</span></dt>
+                <dd>
+                    <span>{{ plano.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.plano.descricao">Descricao</span></dt>
+                <dd>
+                    <span>{{ plano.descricao }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.plano.horarioPrevisto">Horario Previsto</span></dt>
+                <dd>
+                    <span>{{ plano.horarioPrevisto }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.plano.trackingAtivo">Tracking Ativo</span></dt>
+                <dd>
+                    <span>{{ plano.trackingAtivo }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.plano.plrAtivo">Plr Ativo</span></dt>
+                <dd>
+                    <span>{{ plano.plrAtivo }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.plano.codigoWidgetPrevisao">Codigo Widget Previsao</span></dt>
+                <dd>
+                    <span>{{ plano.codigoWidgetPrevisao }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.plano.kmlAlvo">Kml Alvo</span></dt>
+                <dd>
+                    <span>{{ plano.kmlAlvo }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.plano.zoomMin">Zoom Min</span></dt>
+                <dd>
+                    <span>{{ plano.zoomMin }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.plano.dtInicioContrato">Dt Inicio Contrato</span></dt>
+                <dd>
+                    <span>{{ plano.dtInicioContrato }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.plano.dataFimContrato">Data Fim Contrato</span></dt>
+                <dd>
+                    <span>{{ plano.dataFimContrato }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.plano.horarioMonitInicio">Horario Monit Inicio</span></dt>
+                <dd>
+                    <span>{{ plano.horarioMonitInicio }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.plano.horarioMonitFinal">Horario Monit Final</span></dt>
+                <dd>
+                    <span>{{ plano.horarioMonitFinal }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.plano.blocos">Blocos</span></dt>
+                <dd>
+                    <span>{{ plano.blocos }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.plano.extent">Extent</span></dt>
+                <dd>
+                    <span>{{ plano.extent }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.plano.created">Created</span></dt>
+                <dd>
+                    <span>{{ plano.created }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.plano.updated">Updated</span></dt>
+                <dd>
+                    <span>{{ plano.updated }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.plano.empresa">Empresa</span></dt>
+                <dd>
+                    <div *ngIf="plano.empresaId">
+                        <a [routerLink]="['/empresa', plano.empresaId, 'view']">{{ plano.empresaId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.plano.planoStatus">Plano Status</span></dt>
+                <dd>
+                    <div *ngIf="plano.planoStatusId">
+                        <a [routerLink]="['/plano-status', plano.planoStatusId, 'view']">{{ plano.planoStatusId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/plano', plano.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

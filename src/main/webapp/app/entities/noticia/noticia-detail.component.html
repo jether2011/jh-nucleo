@@ -1,0 +1,46 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="noticia">
+            <h2><span jhiTranslate="nucleoApp.noticia.detail.title">Noticia</span> {{ noticia.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="nucleoApp.noticia.name">Name</span></dt>
+                <dd>
+                    <span>{{ noticia.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.noticia.texto">Texto</span></dt>
+                <dd>
+                    <span>{{ noticia.texto }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.noticia.enviado">Enviado</span></dt>
+                <dd>
+                    <span>{{ noticia.enviado }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.noticia.created">Created</span></dt>
+                <dd>
+                    <span>{{ noticia.created }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.noticia.updated">Updated</span></dt>
+                <dd>
+                    <span>{{ noticia.updated }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/noticia', noticia.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <!--
+        Added the constraints for entity BoletimPrevisao.
+    -->
+    <changeSet id="20200707224338-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="boletim_id"
+                                 baseTableName="boletim_previsao"
+                                 constraintName="fk_boletim_previsao_boletim_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="boletim"/>
+
+        <addForeignKeyConstraint baseColumnNames="boletim_prev_obs_id"
+                                 baseTableName="boletim_previsao"
+                                 constraintName="fk_boletim_previsao_boletim_prev_obs_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="boletim_prev_obs"/>
+
+        <addForeignKeyConstraint baseColumnNames="intensidade_chuva_id"
+                                 baseTableName="boletim_previsao"
+                                 constraintName="fk_boletim_previsao_intensidade_chuva_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="intensidade_chuva"/>
+
+        <addForeignKeyConstraint baseColumnNames="umidade_ar_id"
+                                 baseTableName="boletim_previsao"
+                                 constraintName="fk_boletim_previsao_umidade_ar_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="umidade_ar"/>
+
+        <addForeignKeyConstraint baseColumnNames="alvo_id"
+                                 baseTableName="boletim_previsao"
+                                 constraintName="fk_boletim_previsao_alvo_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="alvo"/>
+
+        <addForeignKeyConstraint baseColumnNames="pontos_cardeais_id"
+                                 baseTableName="boletim_previsao"
+                                 constraintName="fk_boletim_previsao_pontos_cardeais_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="pontos_cardeais"/>
+
+        <addForeignKeyConstraint baseColumnNames="vento_vm_faixa_id"
+                                 baseTableName="boletim_previsao"
+                                 constraintName="fk_boletim_previsao_vento_vm_faixa_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="vento_vm_faixa"/>
+
+        <addForeignKeyConstraint baseColumnNames="tempestade_probabilidade_id"
+                                 baseTableName="boletim_previsao"
+                                 constraintName="fk_boletim_previsao_tempestade_probabilidade_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tempestade_probabilidade"/>
+
+        <addForeignKeyConstraint baseColumnNames="tempestade_nivel_id"
+                                 baseTableName="boletim_previsao"
+                                 constraintName="fk_boletim_previsao_tempestade_nivel_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tempestade_nivel"/>
+
+        <addForeignKeyConstraint baseColumnNames="acumulado_chuva_faixa_id"
+                                 baseTableName="boletim_previsao"
+                                 constraintName="fk_boletim_previsao_acumulado_chuva_faixa_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="acumulado_chuva_faixa"/>
+
+        <addForeignKeyConstraint baseColumnNames="condicao_tempo_id"
+                                 baseTableName="boletim_previsao"
+                                 constraintName="fk_boletim_previsao_condicao_tempo_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="condicao_tempo"/>
+
+    </changeSet>
+</databaseChangeLog>

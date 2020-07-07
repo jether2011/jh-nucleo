@@ -1,0 +1,27 @@
+{
+  "nucleoApp": {
+    "acumuladoChuvaFaixa": {
+      "home": {
+        "title": "Acumulado Chuva Faixas",
+        "createLabel": "Create a new Acumulado Chuva Faixa",
+        "createOrEditLabel": "Create or edit a Acumulado Chuva Faixa",
+        "notFound": "No Acumulado Chuva Faixas found"
+      },
+      "created": "A new Acumulado Chuva Faixa is created with identifier {{ param }}",
+      "updated": "A Acumulado Chuva Faixa is updated with identifier {{ param }}",
+      "deleted": "A Acumulado Chuva Faixa is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Acumulado Chuva Faixa {{ id }}?"
+      },
+      "detail": {
+        "title": "Acumulado Chuva Faixa"
+      },
+      "nome": "Nome",
+      "descricao": "Descricao",
+      "deMm": "De Mm",
+      "ateMm": "Ate Mm",
+      "created": "Created",
+      "updated": "Updated"
+    }
+  }
+}

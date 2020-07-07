@@ -1,0 +1,46 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="intensidadeChuva">
+            <h2><span jhiTranslate="nucleoApp.intensidadeChuva.detail.title">Intensidade Chuva</span> {{ intensidadeChuva.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="nucleoApp.intensidadeChuva.nome">Nome</span></dt>
+                <dd>
+                    <span>{{ intensidadeChuva.nome }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.intensidadeChuva.descricao">Descricao</span></dt>
+                <dd>
+                    <span>{{ intensidadeChuva.descricao }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.intensidadeChuva.faixa">Faixa</span></dt>
+                <dd>
+                    <span>{{ intensidadeChuva.faixa }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.intensidadeChuva.created">Created</span></dt>
+                <dd>
+                    <span>{{ intensidadeChuva.created }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.intensidadeChuva.updated">Updated</span></dt>
+                <dd>
+                    <span>{{ intensidadeChuva.updated }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/intensidade-chuva', intensidadeChuva.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

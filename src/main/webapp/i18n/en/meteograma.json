@@ -1,0 +1,29 @@
+{
+  "nucleoApp": {
+    "meteograma": {
+      "home": {
+        "title": "Meteogramas",
+        "createLabel": "Create a new Meteograma",
+        "createOrEditLabel": "Create or edit a Meteograma",
+        "notFound": "No Meteogramas found"
+      },
+      "created": "A new Meteograma is created with identifier {{ param }}",
+      "updated": "A Meteograma is updated with identifier {{ param }}",
+      "deleted": "A Meteograma is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Meteograma {{ id }}?"
+      },
+      "detail": {
+        "title": "Meteograma"
+      },
+      "name": "Name",
+      "descricao": "Descricao",
+      "arquivo": "Arquivo",
+      "folder": "Folder",
+      "tipoarquivo": "Tipoarquivo",
+      "created": "Created",
+      "updated": "Updated",
+      "plano": "Plano"
+    }
+  }
+}

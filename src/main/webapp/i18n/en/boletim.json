@@ -1,0 +1,38 @@
+{
+  "nucleoApp": {
+    "boletim": {
+      "home": {
+        "title": "Boletims",
+        "createLabel": "Create a new Boletim",
+        "createOrEditLabel": "Create or edit a Boletim",
+        "notFound": "No Boletims found"
+      },
+      "created": "A new Boletim is created with identifier {{ param }}",
+      "updated": "A Boletim is updated with identifier {{ param }}",
+      "deleted": "A Boletim is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Boletim {{ id }}?"
+      },
+      "detail": {
+        "title": "Boletim"
+      },
+      "nome": "Nome",
+      "descricao": "Descricao",
+      "texto": "Texto",
+      "textoSms": "Texto Sms",
+      "imagem": "Imagem",
+      "assunto": "Assunto",
+      "textoParte2": "Texto Parte 2",
+      "textoParte3": "Texto Parte 3",
+      "subAssunto": "Sub Assunto",
+      "naoExibirPagEmpresa": "Nao Exibir Pag Empresa",
+      "critico": "Critico",
+      "aprovado": "Aprovado",
+      "enviarSms": "Enviar Sms",
+      "enviarEmail": "Enviar Email",
+      "created": "Created",
+      "updated": "Updated",
+      "planoRecurso": "Plano Recurso"
+    }
+  }
+}

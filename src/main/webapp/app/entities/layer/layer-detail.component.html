@@ -1,0 +1,86 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="layer">
+            <h2><span jhiTranslate="nucleoApp.layer.detail.title">Layer</span> {{ layer.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="nucleoApp.layer.name">Name</span></dt>
+                <dd>
+                    <span>{{ layer.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.layer.description">Description</span></dt>
+                <dd>
+                    <span>{{ layer.description }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.layer.mapHost">Map Host</span></dt>
+                <dd>
+                    <span>{{ layer.mapHost }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.layer.layerType">Layer Type</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'nucleoApp.LayerType.' + layer.layerType }}">{{ layer.layerType }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.layer.title">Title</span></dt>
+                <dd>
+                    <span>{{ layer.title }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.layer.attribution">Attribution</span></dt>
+                <dd>
+                    <span>{{ layer.attribution }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.layer.workspace">Workspace</span></dt>
+                <dd>
+                    <span>{{ layer.workspace }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.layer.opacity">Opacity</span></dt>
+                <dd>
+                    <span>{{ layer.opacity }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.layer.baselayer">Baselayer</span></dt>
+                <dd>
+                    <span>{{ layer.baselayer }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.layer.tiled">Tiled</span></dt>
+                <dd>
+                    <span>{{ layer.tiled }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.layer.gwcActived">Gwc Actived</span></dt>
+                <dd>
+                    <span>{{ layer.gwcActived }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.layer.active">Active</span></dt>
+                <dd>
+                    <span>{{ layer.active }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.layer.enabled">Enabled</span></dt>
+                <dd>
+                    <span>{{ layer.enabled }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.layer.created">Created</span></dt>
+                <dd>
+                    <span>{{ layer.created }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.layer.updated">Updated</span></dt>
+                <dd>
+                    <span>{{ layer.updated }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/layer', layer.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

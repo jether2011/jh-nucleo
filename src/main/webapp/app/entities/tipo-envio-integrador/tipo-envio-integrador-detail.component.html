@@ -1,0 +1,58 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="tipoEnvioIntegrador">
+            <h2><span jhiTranslate="nucleoApp.tipoEnvioIntegrador.detail.title">Tipo Envio Integrador</span> {{ tipoEnvioIntegrador.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="nucleoApp.tipoEnvioIntegrador.name">Name</span></dt>
+                <dd>
+                    <span>{{ tipoEnvioIntegrador.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.tipoEnvioIntegrador.descricao">Descricao</span></dt>
+                <dd>
+                    <span>{{ tipoEnvioIntegrador.descricao }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.tipoEnvioIntegrador.ativo">Ativo</span></dt>
+                <dd>
+                    <span>{{ tipoEnvioIntegrador.ativo }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.tipoEnvioIntegrador.created">Created</span></dt>
+                <dd>
+                    <span>{{ tipoEnvioIntegrador.created }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.tipoEnvioIntegrador.updated">Updated</span></dt>
+                <dd>
+                    <span>{{ tipoEnvioIntegrador.updated }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.tipoEnvioIntegrador.tipoEnvio">Tipo Envio</span></dt>
+                <dd>
+                    <div *ngIf="tipoEnvioIntegrador.tipoEnvioId">
+                        <a [routerLink]="['/tipo-envio', tipoEnvioIntegrador.tipoEnvioId, 'view']">{{ tipoEnvioIntegrador.tipoEnvioId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.tipoEnvioIntegrador.integrador">Integrador</span></dt>
+                <dd>
+                    <div *ngIf="tipoEnvioIntegrador.integradorId">
+                        <a [routerLink]="['/integrador', tipoEnvioIntegrador.integradorId, 'view']">{{ tipoEnvioIntegrador.integradorId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/tipo-envio-integrador', tipoEnvioIntegrador.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

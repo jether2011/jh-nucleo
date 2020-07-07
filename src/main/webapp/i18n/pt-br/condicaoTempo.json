@@ -1,0 +1,25 @@
+{
+  "nucleoApp": {
+    "condicaoTempo": {
+      "home": {
+        "title": "Condicao Tempos",
+        "createLabel": "Criar novo Condicao Tempo",
+        "createOrEditLabel": "Criar ou editar Condicao Tempo",
+        "notFound": "Nenhum Condicao Tempo encontrado"
+      },
+      "created": "Um novo Condicao Tempo foi criado com o identificador {{ param }}",
+      "updated": "Um Condicao Tempo foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Condicao Tempo foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Condicao Tempo {{ id }}?"
+      },
+      "detail": {
+        "title": "Condicao Tempo"
+      },
+      "nome": "Nome",
+      "descricao": "Descricao",
+      "created": "Created",
+      "updated": "Updated"
+    }
+  }
+}

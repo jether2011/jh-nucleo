@@ -1,0 +1,27 @@
+{
+  "nucleoApp": {
+    "ventoVmFaixa": {
+      "home": {
+        "title": "Vento Vm Faixas",
+        "createLabel": "Criar novo Vento Vm Faixa",
+        "createOrEditLabel": "Criar ou editar Vento Vm Faixa",
+        "notFound": "Nenhum Vento Vm Faixa encontrado"
+      },
+      "created": "Um novo Vento Vm Faixa foi criado com o identificador {{ param }}",
+      "updated": "Um Vento Vm Faixa foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Vento Vm Faixa foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Vento Vm Faixa {{ id }}?"
+      },
+      "detail": {
+        "title": "Vento Vm Faixa"
+      },
+      "name": "Name",
+      "descricao": "Descricao",
+      "de": "De",
+      "ate": "Ate",
+      "created": "Created",
+      "updated": "Updated"
+    }
+  }
+}

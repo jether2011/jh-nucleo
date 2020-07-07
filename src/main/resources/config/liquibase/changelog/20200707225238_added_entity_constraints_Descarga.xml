@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <!--
+        Added the constraints for entity Descarga.
+    -->
+    <changeSet id="20200707225238-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="rede_id"
+                                 baseTableName="descarga"
+                                 constraintName="fk_descarga_rede_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="rede"/>
+
+        <addForeignKeyConstraint baseColumnNames="descarga_tipo_id"
+                                 baseTableName="descarga"
+                                 constraintName="fk_descarga_descarga_tipo_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="descarga_tipo"/>
+
+        <addForeignKeyConstraint baseColumnNames="descarga_unidade_id"
+                                 baseTableName="descarga"
+                                 constraintName="fk_descarga_descarga_unidade_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="descarga_unidade"/>
+
+        <addForeignKeyConstraint baseColumnNames="alerta_id"
+                                 baseTableName="descarga"
+                                 constraintName="fk_descarga_alerta_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="alerta"/>
+
+    </changeSet>
+</databaseChangeLog>

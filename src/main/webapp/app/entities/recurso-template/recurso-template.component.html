@@ -1,0 +1,97 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="nucleoApp.recursoTemplate.home.title">Recurso Templates</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-recurso-template" [routerLink]="['/recurso-template/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="nucleoApp.recursoTemplate.home.createLabel">
+            Create a new Recurso Template
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="recursoTemplates?.length === 0">
+        <span jhiTranslate="nucleoApp.recursoTemplate.home.notFound">No recursoTemplates found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="recursoTemplates && recursoTemplates.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="name"><span jhiTranslate="nucleoApp.recursoTemplate.name">Name</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="descricao"><span jhiTranslate="nucleoApp.recursoTemplate.descricao">Descricao</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="template"><span jhiTranslate="nucleoApp.recursoTemplate.template">Template</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="created"><span jhiTranslate="nucleoApp.recursoTemplate.created">Created</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="updated"><span jhiTranslate="nucleoApp.recursoTemplate.updated">Updated</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="recursoId"><span jhiTranslate="nucleoApp.recursoTemplate.recurso">Recurso</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="tipoEnvioId"><span jhiTranslate="nucleoApp.recursoTemplate.tipoEnvio">Tipo Envio</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="alertaTipoId"><span jhiTranslate="nucleoApp.recursoTemplate.alertaTipo">Alerta Tipo</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let recursoTemplate of recursoTemplates ;trackBy: trackId">
+                    <td><a [routerLink]="['/recurso-template', recursoTemplate.id, 'view']">{{ recursoTemplate.id }}</a></td>
+                    <td>{{ recursoTemplate.name }}</td>
+                    <td>{{ recursoTemplate.descricao }}</td>
+                    <td>{{ recursoTemplate.template }}</td>
+                    <td>{{ recursoTemplate.created | date:'medium' }}</td>
+                    <td>{{ recursoTemplate.updated | date:'medium' }}</td>
+                    <td>
+                        <div *ngIf="recursoTemplate.recursoId">
+                            <a [routerLink]="['/recurso', recursoTemplate.recursoId , 'view']" >{{ recursoTemplate.recursoId }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="recursoTemplate.tipoEnvioId">
+                            <a [routerLink]="['/tipo-envio', recursoTemplate.tipoEnvioId , 'view']" >{{ recursoTemplate.tipoEnvioId }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="recursoTemplate.alertaTipoId">
+                            <a [routerLink]="['/alerta-tipo', recursoTemplate.alertaTipoId , 'view']" >{{ recursoTemplate.alertaTipoId }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/recurso-template', recursoTemplate.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/recurso-template', recursoTemplate.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(recursoTemplate)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="recursoTemplates && recursoTemplates.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+        </div>
+    </div>
+</div>

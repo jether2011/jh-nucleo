@@ -1,0 +1,25 @@
+{
+  "nucleoApp": {
+    "pontosCardeais": {
+      "home": {
+        "title": "Pontos Cardeais",
+        "createLabel": "Create a new Pontos Cardeais",
+        "createOrEditLabel": "Create or edit a Pontos Cardeais",
+        "notFound": "No Pontos Cardeais found"
+      },
+      "created": "A new Pontos Cardeais is created with identifier {{ param }}",
+      "updated": "A Pontos Cardeais is updated with identifier {{ param }}",
+      "deleted": "A Pontos Cardeais is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Pontos Cardeais {{ id }}?"
+      },
+      "detail": {
+        "title": "Pontos Cardeais"
+      },
+      "name": "Name",
+      "descricao": "Descricao",
+      "created": "Created",
+      "updated": "Updated"
+    }
+  }
+}

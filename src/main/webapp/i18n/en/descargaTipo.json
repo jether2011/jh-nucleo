@@ -1,0 +1,25 @@
+{
+  "nucleoApp": {
+    "descargaTipo": {
+      "home": {
+        "title": "Descarga Tipos",
+        "createLabel": "Create a new Descarga Tipo",
+        "createOrEditLabel": "Create or edit a Descarga Tipo",
+        "notFound": "No Descarga Tipos found"
+      },
+      "created": "A new Descarga Tipo is created with identifier {{ param }}",
+      "updated": "A Descarga Tipo is updated with identifier {{ param }}",
+      "deleted": "A Descarga Tipo is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Descarga Tipo {{ id }}?"
+      },
+      "detail": {
+        "title": "Descarga Tipo"
+      },
+      "nome": "Nome",
+      "descricao": "Descricao",
+      "created": "Created",
+      "updated": "Updated"
+    }
+  }
+}

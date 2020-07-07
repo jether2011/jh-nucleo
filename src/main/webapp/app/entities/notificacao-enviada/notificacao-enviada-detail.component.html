@@ -1,0 +1,92 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="notificacaoEnviada">
+            <h2><span jhiTranslate="nucleoApp.notificacaoEnviada.detail.title">Notificacao Enviada</span> {{ notificacaoEnviada.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="nucleoApp.notificacaoEnviada.name">Name</span></dt>
+                <dd>
+                    <span>{{ notificacaoEnviada.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.notificacaoEnviada.descricao">Descricao</span></dt>
+                <dd>
+                    <span>{{ notificacaoEnviada.descricao }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.notificacaoEnviada.destinatarios">Destinatarios</span></dt>
+                <dd>
+                    <span>{{ notificacaoEnviada.destinatarios }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.notificacaoEnviada.tipo">Tipo</span></dt>
+                <dd>
+                    <span>{{ notificacaoEnviada.tipo }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.notificacaoEnviada.status">Status</span></dt>
+                <dd>
+                    <span>{{ notificacaoEnviada.status }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.notificacaoEnviada.assunto">Assunto</span></dt>
+                <dd>
+                    <span>{{ notificacaoEnviada.assunto }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.notificacaoEnviada.enviado">Enviado</span></dt>
+                <dd>
+                    <span>{{ notificacaoEnviada.enviado }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.notificacaoEnviada.contador">Contador</span></dt>
+                <dd>
+                    <span>{{ notificacaoEnviada.contador }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.notificacaoEnviada.amazonMessageId">Amazon Message Id</span></dt>
+                <dd>
+                    <span>{{ notificacaoEnviada.amazonMessageId }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.notificacaoEnviada.amazonDateLog">Amazon Date Log</span></dt>
+                <dd>
+                    <span>{{ notificacaoEnviada.amazonDateLog }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.notificacaoEnviada.priceInUsd">Price In Usd</span></dt>
+                <dd>
+                    <span>{{ notificacaoEnviada.priceInUsd }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.notificacaoEnviada.amazonResposta">Amazon Resposta</span></dt>
+                <dd>
+                    <span>{{ notificacaoEnviada.amazonResposta }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.notificacaoEnviada.referenceId">Reference Id</span></dt>
+                <dd>
+                    <span>{{ notificacaoEnviada.referenceId }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.notificacaoEnviada.created">Created</span></dt>
+                <dd>
+                    <span>{{ notificacaoEnviada.created }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.notificacaoEnviada.updated">Updated</span></dt>
+                <dd>
+                    <span>{{ notificacaoEnviada.updated }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.notificacaoEnviada.planoRecurso">Plano Recurso</span></dt>
+                <dd>
+                    <div *ngIf="notificacaoEnviada.planoRecursoId">
+                        <a [routerLink]="['/plano-recurso', notificacaoEnviada.planoRecursoId, 'view']">{{ notificacaoEnviada.planoRecursoId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/notificacao-enviada', notificacaoEnviada.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

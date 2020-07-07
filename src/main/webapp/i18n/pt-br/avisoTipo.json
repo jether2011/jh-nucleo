@@ -1,0 +1,25 @@
+{
+  "nucleoApp": {
+    "avisoTipo": {
+      "home": {
+        "title": "Aviso Tipos",
+        "createLabel": "Criar novo Aviso Tipo",
+        "createOrEditLabel": "Criar ou editar Aviso Tipo",
+        "notFound": "Nenhum Aviso Tipo encontrado"
+      },
+      "created": "Um novo Aviso Tipo foi criado com o identificador {{ param }}",
+      "updated": "Um Aviso Tipo foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Aviso Tipo foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Aviso Tipo {{ id }}?"
+      },
+      "detail": {
+        "title": "Aviso Tipo"
+      },
+      "nome": "Nome",
+      "descricao": "Descricao",
+      "created": "Created",
+      "updated": "Updated"
+    }
+  }
+}

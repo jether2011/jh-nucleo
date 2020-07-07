@@ -1,0 +1,25 @@
+{
+  "nucleoApp": {
+    "pontosCardeais": {
+      "home": {
+        "title": "Pontos Cardeais",
+        "createLabel": "Criar novo Pontos Cardeais",
+        "createOrEditLabel": "Criar ou editar Pontos Cardeais",
+        "notFound": "Nenhum Pontos Cardeais encontrado"
+      },
+      "created": "Um novo Pontos Cardeais foi criado com o identificador {{ param }}",
+      "updated": "Um Pontos Cardeais foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Pontos Cardeais foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Pontos Cardeais {{ id }}?"
+      },
+      "detail": {
+        "title": "Pontos Cardeais"
+      },
+      "name": "Name",
+      "descricao": "Descricao",
+      "created": "Created",
+      "updated": "Updated"
+    }
+  }
+}

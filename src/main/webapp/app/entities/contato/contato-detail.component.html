@@ -1,0 +1,70 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="contato">
+            <h2><span jhiTranslate="nucleoApp.contato.detail.title">Contato</span> {{ contato.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="nucleoApp.contato.nome">Nome</span></dt>
+                <dd>
+                    <span>{{ contato.nome }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.contato.descricao">Descricao</span></dt>
+                <dd>
+                    <span>{{ contato.descricao }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.contato.email">Email</span></dt>
+                <dd>
+                    <span>{{ contato.email }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.contato.celular">Celular</span></dt>
+                <dd>
+                    <span>{{ contato.celular }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.contato.ativo">Ativo</span></dt>
+                <dd>
+                    <span>{{ contato.ativo }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.contato.contatoAlertaTelefonico">Contato Alerta Telefonico</span></dt>
+                <dd>
+                    <span>{{ contato.contatoAlertaTelefonico }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.contato.prioridade">Prioridade</span></dt>
+                <dd>
+                    <span>{{ contato.prioridade }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.contato.horaLigacaoInicial">Hora Ligacao Inicial</span></dt>
+                <dd>
+                    <span>{{ contato.horaLigacaoInicial }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.contato.horaLigacaoFinal">Hora Ligacao Final</span></dt>
+                <dd>
+                    <span>{{ contato.horaLigacaoFinal }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.contato.created">Created</span></dt>
+                <dd>
+                    <span>{{ contato.created }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.contato.updated">Updated</span></dt>
+                <dd>
+                    <span>{{ contato.updated }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/contato', contato.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

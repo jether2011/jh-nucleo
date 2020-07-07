@@ -1,0 +1,28 @@
+{
+  "nucleoApp": {
+    "voceSabia": {
+      "home": {
+        "title": "Voce Sabias",
+        "createLabel": "Criar novo Voce Sabia",
+        "createOrEditLabel": "Criar ou editar Voce Sabia",
+        "notFound": "Nenhum Voce Sabia encontrado"
+      },
+      "created": "Um novo Voce Sabia foi criado com o identificador {{ param }}",
+      "updated": "Um Voce Sabia foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Voce Sabia foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Voce Sabia {{ id }}?"
+      },
+      "detail": {
+        "title": "Voce Sabia"
+      },
+      "name": "Name",
+      "descricao": "Descricao",
+      "titulo": "Titulo",
+      "texto": "Texto",
+      "imagem": "Imagem",
+      "created": "Created",
+      "updated": "Updated"
+    }
+  }
+}

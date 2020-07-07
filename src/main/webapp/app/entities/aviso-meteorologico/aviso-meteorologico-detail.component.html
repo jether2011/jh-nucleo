@@ -1,0 +1,68 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="avisoMeteorologico">
+            <h2><span jhiTranslate="nucleoApp.avisoMeteorologico.detail.title">Aviso Meteorologico</span> {{ avisoMeteorologico.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="nucleoApp.avisoMeteorologico.nome">Nome</span></dt>
+                <dd>
+                    <span>{{ avisoMeteorologico.nome }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.avisoMeteorologico.assunto">Assunto</span></dt>
+                <dd>
+                    <span>{{ avisoMeteorologico.assunto }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.avisoMeteorologico.inicio">Inicio</span></dt>
+                <dd>
+                    <span>{{ avisoMeteorologico.inicio }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.avisoMeteorologico.fim">Fim</span></dt>
+                <dd>
+                    <span>{{ avisoMeteorologico.fim }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.avisoMeteorologico.texto">Texto</span></dt>
+                <dd>
+                    <span>{{ avisoMeteorologico.texto }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.avisoMeteorologico.imagem">Imagem</span></dt>
+                <dd>
+                    <span>{{ avisoMeteorologico.imagem }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.avisoMeteorologico.imagemAssinatura">Imagem Assinatura</span></dt>
+                <dd>
+                    <span>{{ avisoMeteorologico.imagemAssinatura }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.avisoMeteorologico.created">Created</span></dt>
+                <dd>
+                    <span>{{ avisoMeteorologico.created }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.avisoMeteorologico.updated">Updated</span></dt>
+                <dd>
+                    <span>{{ avisoMeteorologico.updated }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.avisoMeteorologico.planoRecurso">Plano Recurso</span></dt>
+                <dd>
+                    <div *ngIf="avisoMeteorologico.planoRecursoId">
+                        <a [routerLink]="['/plano-recurso', avisoMeteorologico.planoRecursoId, 'view']">{{ avisoMeteorologico.planoRecursoId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/aviso-meteorologico', avisoMeteorologico.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
