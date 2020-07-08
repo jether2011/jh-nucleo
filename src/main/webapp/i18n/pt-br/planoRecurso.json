@@ -1,0 +1,28 @@
+{
+  "nucleoApp": {
+    "planoRecurso": {
+      "home": {
+        "title": "Plano Recursos",
+        "createLabel": "Criar novo Plano Recurso",
+        "createOrEditLabel": "Criar ou editar Plano Recurso",
+        "notFound": "Nenhum Plano Recurso encontrado"
+      },
+      "created": "Um novo Plano Recurso foi criado com o identificador {{ param }}",
+      "updated": "Um Plano Recurso foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Plano Recurso foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Plano Recurso {{ id }}?"
+      },
+      "detail": {
+        "title": "Plano Recurso"
+      },
+      "name": "Name",
+      "descricao": "Descricao",
+      "ativo": "Ativo",
+      "created": "Created",
+      "updated": "Updated",
+      "plano": "Plano",
+      "recurso": "Recurso"
+    }
+  }
+}

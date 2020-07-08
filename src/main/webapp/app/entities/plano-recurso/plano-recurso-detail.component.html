@@ -1,0 +1,58 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="planoRecurso">
+            <h2><span jhiTranslate="nucleoApp.planoRecurso.detail.title">Plano Recurso</span> {{ planoRecurso.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="nucleoApp.planoRecurso.name">Name</span></dt>
+                <dd>
+                    <span>{{ planoRecurso.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.planoRecurso.descricao">Descricao</span></dt>
+                <dd>
+                    <span>{{ planoRecurso.descricao }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.planoRecurso.ativo">Ativo</span></dt>
+                <dd>
+                    <span>{{ planoRecurso.ativo }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.planoRecurso.created">Created</span></dt>
+                <dd>
+                    <span>{{ planoRecurso.created }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.planoRecurso.updated">Updated</span></dt>
+                <dd>
+                    <span>{{ planoRecurso.updated }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.planoRecurso.plano">Plano</span></dt>
+                <dd>
+                    <div *ngIf="planoRecurso.planoId">
+                        <a [routerLink]="['/plano', planoRecurso.planoId, 'view']">{{ planoRecurso.planoId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.planoRecurso.recurso">Recurso</span></dt>
+                <dd>
+                    <div *ngIf="planoRecurso.recursoId">
+                        <a [routerLink]="['/recurso', planoRecurso.recursoId, 'view']">{{ planoRecurso.recursoId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/plano-recurso', planoRecurso.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

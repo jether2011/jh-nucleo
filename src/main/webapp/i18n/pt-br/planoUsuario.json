@@ -1,0 +1,27 @@
+{
+  "nucleoApp": {
+    "planoUsuario": {
+      "home": {
+        "title": "Plano Usuarios",
+        "createLabel": "Criar novo Plano Usuario",
+        "createOrEditLabel": "Criar ou editar Plano Usuario",
+        "notFound": "Nenhum Plano Usuario encontrado"
+      },
+      "created": "Um novo Plano Usuario foi criado com o identificador {{ param }}",
+      "updated": "Um Plano Usuario foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Plano Usuario foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Plano Usuario {{ id }}?"
+      },
+      "detail": {
+        "title": "Plano Usuario"
+      },
+      "name": "Name",
+      "descricao": "Descricao",
+      "created": "Created",
+      "updated": "Updated",
+      "plano": "Plano",
+      "usuario": "Usuario"
+    }
+  }
+}

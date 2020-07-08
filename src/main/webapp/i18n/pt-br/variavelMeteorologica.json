@@ -1,0 +1,25 @@
+{
+  "nucleoApp": {
+    "variavelMeteorologica": {
+      "home": {
+        "title": "Variavel Meteorologicas",
+        "createLabel": "Criar novo Variavel Meteorologica",
+        "createOrEditLabel": "Criar ou editar Variavel Meteorologica",
+        "notFound": "Nenhum Variavel Meteorologica encontrado"
+      },
+      "created": "Um novo Variavel Meteorologica foi criado com o identificador {{ param }}",
+      "updated": "Um Variavel Meteorologica foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Variavel Meteorologica foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Variavel Meteorologica {{ id }}?"
+      },
+      "detail": {
+        "title": "Variavel Meteorologica"
+      },
+      "name": "Name",
+      "descricao": "Descricao",
+      "created": "Created",
+      "updated": "Updated"
+    }
+  }
+}

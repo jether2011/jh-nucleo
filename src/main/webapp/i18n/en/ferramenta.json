@@ -1,0 +1,26 @@
+{
+  "nucleoApp": {
+    "ferramenta": {
+      "home": {
+        "title": "Ferramentas",
+        "createLabel": "Create a new Ferramenta",
+        "createOrEditLabel": "Create or edit a Ferramenta",
+        "notFound": "No Ferramentas found"
+      },
+      "created": "A new Ferramenta is created with identifier {{ param }}",
+      "updated": "A Ferramenta is updated with identifier {{ param }}",
+      "deleted": "A Ferramenta is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Ferramenta {{ id }}?"
+      },
+      "detail": {
+        "title": "Ferramenta"
+      },
+      "nome": "Nome",
+      "descricao": "Descricao",
+      "created": "Created",
+      "updated": "Updated",
+      "tipoFerramenta": "Tipo Ferramenta"
+    }
+  }
+}

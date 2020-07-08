@@ -1,0 +1,30 @@
+{
+  "nucleoApp": {
+    "tempestadeNivel": {
+      "home": {
+        "title": "Tempestade Nivels",
+        "createLabel": "Create a new Tempestade Nivel",
+        "createOrEditLabel": "Create or edit a Tempestade Nivel",
+        "notFound": "No Tempestade Nivels found"
+      },
+      "created": "A new Tempestade Nivel is created with identifier {{ param }}",
+      "updated": "A Tempestade Nivel is updated with identifier {{ param }}",
+      "deleted": "A Tempestade Nivel is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Tempestade Nivel {{ id }}?"
+      },
+      "detail": {
+        "title": "Tempestade Nivel"
+      },
+      "name": "Name",
+      "descricao": "Descricao",
+      "taxaDeRaios": "Taxa De Raios",
+      "ventosVelocidade": "Ventos Velocidade",
+      "granizo": "Granizo",
+      "potencialDeDanos": "Potencial De Danos",
+      "created": "Created",
+      "updated": "Updated",
+      "intensidadeChuva": "Intensidade Chuva"
+    }
+  }
+}

@@ -1,0 +1,42 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="rede">
+            <h2><span jhiTranslate="nucleoApp.rede.detail.title">Rede</span> {{ rede.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="nucleoApp.rede.name">Name</span></dt>
+                <dd>
+                    <span>{{ rede.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.rede.descricao">Descricao</span></dt>
+                <dd>
+                    <span>{{ rede.descricao }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.rede.created">Created</span></dt>
+                <dd>
+                    <span>{{ rede.created }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.rede.updated">Updated</span></dt>
+                <dd>
+                    <span>{{ rede.updated }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/rede', rede.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

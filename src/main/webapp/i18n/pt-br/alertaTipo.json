@@ -1,0 +1,25 @@
+{
+  "nucleoApp": {
+    "alertaTipo": {
+      "home": {
+        "title": "Alerta Tipos",
+        "createLabel": "Criar novo Alerta Tipo",
+        "createOrEditLabel": "Criar ou editar Alerta Tipo",
+        "notFound": "Nenhum Alerta Tipo encontrado"
+      },
+      "created": "Um novo Alerta Tipo foi criado com o identificador {{ param }}",
+      "updated": "Um Alerta Tipo foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Alerta Tipo foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Alerta Tipo {{ id }}?"
+      },
+      "detail": {
+        "title": "Alerta Tipo"
+      },
+      "nome": "Nome",
+      "descricao": "Descricao",
+      "created": "Created",
+      "updated": "Updated"
+    }
+  }
+}

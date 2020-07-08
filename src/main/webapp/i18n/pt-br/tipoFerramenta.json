@@ -1,0 +1,25 @@
+{
+  "nucleoApp": {
+    "tipoFerramenta": {
+      "home": {
+        "title": "Tipo Ferramentas",
+        "createLabel": "Criar novo Tipo Ferramenta",
+        "createOrEditLabel": "Criar ou editar Tipo Ferramenta",
+        "notFound": "Nenhum Tipo Ferramenta encontrado"
+      },
+      "created": "Um novo Tipo Ferramenta foi criado com o identificador {{ param }}",
+      "updated": "Um Tipo Ferramenta foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Tipo Ferramenta foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Tipo Ferramenta {{ id }}?"
+      },
+      "detail": {
+        "title": "Tipo Ferramenta"
+      },
+      "name": "Name",
+      "descricao": "Descricao",
+      "created": "Created",
+      "updated": "Updated"
+    }
+  }
+}

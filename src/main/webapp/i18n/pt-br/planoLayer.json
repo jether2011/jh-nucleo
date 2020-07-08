@@ -1,0 +1,28 @@
+{
+  "nucleoApp": {
+    "planoLayer": {
+      "home": {
+        "title": "Plano Layers",
+        "createLabel": "Criar novo Plano Layer",
+        "createOrEditLabel": "Criar ou editar Plano Layer",
+        "notFound": "Nenhum Plano Layer encontrado"
+      },
+      "created": "Um novo Plano Layer foi criado com o identificador {{ param }}",
+      "updated": "Um Plano Layer foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Plano Layer foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Plano Layer {{ id }}?"
+      },
+      "detail": {
+        "title": "Plano Layer"
+      },
+      "name": "Name",
+      "descricao": "Descricao",
+      "created": "Created",
+      "updated": "Updated",
+      "plano": "Plano",
+      "layer": "Layer",
+      "alvo": "Alvo"
+    }
+  }
+}

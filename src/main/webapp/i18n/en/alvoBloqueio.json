@@ -1,0 +1,26 @@
+{
+  "nucleoApp": {
+    "alvoBloqueio": {
+      "home": {
+        "title": "Alvo Bloqueios",
+        "createLabel": "Create a new Alvo Bloqueio",
+        "createOrEditLabel": "Create or edit a Alvo Bloqueio",
+        "notFound": "No Alvo Bloqueios found"
+      },
+      "created": "A new Alvo Bloqueio is created with identifier {{ param }}",
+      "updated": "A Alvo Bloqueio is updated with identifier {{ param }}",
+      "deleted": "A Alvo Bloqueio is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Alvo Bloqueio {{ id }}?"
+      },
+      "detail": {
+        "title": "Alvo Bloqueio"
+      },
+      "nome": "Nome",
+      "descricao": "Descricao",
+      "created": "Created",
+      "updated": "Updated",
+      "alvo": "Alvo"
+    }
+  }
+}

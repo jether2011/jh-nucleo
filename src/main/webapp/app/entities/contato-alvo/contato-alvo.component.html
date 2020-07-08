@@ -1,0 +1,89 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="nucleoApp.contatoAlvo.home.title">Contato Alvos</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-contato-alvo" [routerLink]="['/contato-alvo/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="nucleoApp.contatoAlvo.home.createLabel">
+            Create a new Contato Alvo
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="contatoAlvos?.length === 0">
+        <span jhiTranslate="nucleoApp.contatoAlvo.home.notFound">No contatoAlvos found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="contatoAlvos && contatoAlvos.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="nome"><span jhiTranslate="nucleoApp.contatoAlvo.nome">Nome</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="descricao"><span jhiTranslate="nucleoApp.contatoAlvo.descricao">Descricao</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="created"><span jhiTranslate="nucleoApp.contatoAlvo.created">Created</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="updated"><span jhiTranslate="nucleoApp.contatoAlvo.updated">Updated</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="contatoId"><span jhiTranslate="nucleoApp.contatoAlvo.contato">Contato</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="alvoId"><span jhiTranslate="nucleoApp.contatoAlvo.alvo">Alvo</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let contatoAlvo of contatoAlvos ;trackBy: trackId">
+                    <td><a [routerLink]="['/contato-alvo', contatoAlvo.id, 'view']">{{ contatoAlvo.id }}</a></td>
+                    <td>{{ contatoAlvo.nome }}</td>
+                    <td>{{ contatoAlvo.descricao }}</td>
+                    <td>{{ contatoAlvo.created | date:'medium' }}</td>
+                    <td>{{ contatoAlvo.updated | date:'medium' }}</td>
+                    <td>
+                        <div *ngIf="contatoAlvo.contatoId">
+                            <a [routerLink]="['/contato', contatoAlvo.contatoId , 'view']" >{{ contatoAlvo.contatoId }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="contatoAlvo.alvoId">
+                            <a [routerLink]="['/alvo', contatoAlvo.alvoId , 'view']" >{{ contatoAlvo.alvoId }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/contato-alvo', contatoAlvo.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/contato-alvo', contatoAlvo.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(contatoAlvo)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="contatoAlvos && contatoAlvos.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+        </div>
+    </div>
+</div>

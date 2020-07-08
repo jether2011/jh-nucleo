@@ -1,0 +1,38 @@
+{
+  "nucleoApp": {
+    "previsao": {
+      "home": {
+        "title": "Previsaos",
+        "createLabel": "Criar novo Previsao",
+        "createOrEditLabel": "Criar ou editar Previsao",
+        "notFound": "Nenhum Previsao encontrado"
+      },
+      "created": "Um novo Previsao foi criado com o identificador {{ param }}",
+      "updated": "Um Previsao foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Previsao foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Previsao {{ id }}?"
+      },
+      "detail": {
+        "title": "Previsao"
+      },
+      "name": "Name",
+      "descricao": "Descricao",
+      "textoNorte": "Texto Norte",
+      "textoNorteImagem": "Texto Norte Imagem",
+      "textoNordeste": "Texto Nordeste",
+      "textoNordesteImagem": "Texto Nordeste Imagem",
+      "textoSul": "Texto Sul",
+      "textoSulImagem": "Texto Sul Imagem",
+      "textoSudeste": "Texto Sudeste",
+      "textoSudesteImagem": "Texto Sudeste Imagem",
+      "textoCentroOeste": "Texto Centro Oeste",
+      "textoCentroOesteImagem": "Texto Centro Oeste Imagem",
+      "enviado": "Enviado",
+      "textoBrasil": "Texto Brasil",
+      "textoBrasilImagem": "Texto Brasil Imagem",
+      "created": "Created",
+      "updated": "Updated"
+    }
+  }
+}

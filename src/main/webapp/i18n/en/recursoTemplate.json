@@ -1,0 +1,29 @@
+{
+  "nucleoApp": {
+    "recursoTemplate": {
+      "home": {
+        "title": "Recurso Templates",
+        "createLabel": "Create a new Recurso Template",
+        "createOrEditLabel": "Create or edit a Recurso Template",
+        "notFound": "No Recurso Templates found"
+      },
+      "created": "A new Recurso Template is created with identifier {{ param }}",
+      "updated": "A Recurso Template is updated with identifier {{ param }}",
+      "deleted": "A Recurso Template is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Recurso Template {{ id }}?"
+      },
+      "detail": {
+        "title": "Recurso Template"
+      },
+      "name": "Name",
+      "descricao": "Descricao",
+      "template": "Template",
+      "created": "Created",
+      "updated": "Updated",
+      "recurso": "Recurso",
+      "tipoEnvio": "Tipo Envio",
+      "alertaTipo": "Alerta Tipo"
+    }
+  }
+}

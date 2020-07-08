@@ -1,0 +1,48 @@
+{
+  "nucleoApp": {
+    "boletimPrevisao": {
+      "home": {
+        "title": "Boletim Previsaos",
+        "createLabel": "Create a new Boletim Previsao",
+        "createOrEditLabel": "Create or edit a Boletim Previsao",
+        "notFound": "No Boletim Previsaos found"
+      },
+      "created": "A new Boletim Previsao is created with identifier {{ param }}",
+      "updated": "A Boletim Previsao is updated with identifier {{ param }}",
+      "deleted": "A Boletim Previsao is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Boletim Previsao {{ id }}?"
+      },
+      "detail": {
+        "title": "Boletim Previsao"
+      },
+      "nome": "Nome",
+      "descricao": "Descricao",
+      "local": "Local",
+      "imgCondicaoTempo": "Img Condicao Tempo",
+      "observacao": "Observacao",
+      "grupoOrdem": "Grupo Ordem",
+      "ondas": "Ondas",
+      "temperaturaDe": "Temperatura De",
+      "temperaturaAte": "Temperatura Ate",
+      "ventovelocidademediakmh": "Ventovelocidademediakmh",
+      "ventosObservacao": "Ventos Observacao",
+      "ventoRajada": "Vento Rajada",
+      "tempestadeObservacao": "Tempestade Observacao",
+      "chuvaObservacao": "Chuva Observacao",
+      "created": "Created",
+      "updated": "Updated",
+      "boletim": "Boletim",
+      "boletimPrevObs": "Boletim Prev Obs",
+      "intensidadeChuva": "Intensidade Chuva",
+      "umidadeAr": "Umidade Ar",
+      "alvo": "Alvo",
+      "pontosCardeais": "Pontos Cardeais",
+      "ventoVmFaixa": "Vento Vm Faixa",
+      "tempestadeProbabilidade": "Tempestade Probabilidade",
+      "tempestadeNivel": "Tempestade Nivel",
+      "acumuladoChuvaFaixa": "Acumulado Chuva Faixa",
+      "condicaoTempo": "Condicao Tempo"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <!--
+        Added the constraints for entity BoletimPrevVariavelMet.
+    -->
+    <changeSet id="20200708023618-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="boletim_previsao_id"
+                                 baseTableName="boletim_prev_variavel_met"
+                                 constraintName="fk_boletim_prev_variavel_met_boletim_previsao_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="boletim_previsao"/>
+
+        <addForeignKeyConstraint baseColumnNames="variavel_meteorologica_id"
+                                 baseTableName="boletim_prev_variavel_met"
+                                 constraintName="fk_boletim_prev_variavel_met_variavel_meteorologica_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="variavel_meteorologica"/>
+
+    </changeSet>
+</databaseChangeLog>

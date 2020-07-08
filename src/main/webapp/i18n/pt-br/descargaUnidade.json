@@ -1,0 +1,26 @@
+{
+  "nucleoApp": {
+    "descargaUnidade": {
+      "home": {
+        "title": "Descarga Unidades",
+        "createLabel": "Criar novo Descarga Unidade",
+        "createOrEditLabel": "Criar ou editar Descarga Unidade",
+        "notFound": "Nenhum Descarga Unidade encontrado"
+      },
+      "created": "Um novo Descarga Unidade foi criado com o identificador {{ param }}",
+      "updated": "Um Descarga Unidade foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Descarga Unidade foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Descarga Unidade {{ id }}?"
+      },
+      "detail": {
+        "title": "Descarga Unidade"
+      },
+      "nome": "Nome",
+      "descricao": "Descricao",
+      "unidade": "Unidade",
+      "created": "Created",
+      "updated": "Updated"
+    }
+  }
+}

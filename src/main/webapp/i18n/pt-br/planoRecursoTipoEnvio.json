@@ -1,0 +1,28 @@
+{
+  "nucleoApp": {
+    "planoRecursoTipoEnvio": {
+      "home": {
+        "title": "Plano Recurso Tipo Envios",
+        "createLabel": "Criar novo Plano Recurso Tipo Envio",
+        "createOrEditLabel": "Criar ou editar Plano Recurso Tipo Envio",
+        "notFound": "Nenhum Plano Recurso Tipo Envio encontrado"
+      },
+      "created": "Um novo Plano Recurso Tipo Envio foi criado com o identificador {{ param }}",
+      "updated": "Um Plano Recurso Tipo Envio foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Plano Recurso Tipo Envio foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Plano Recurso Tipo Envio {{ id }}?"
+      },
+      "detail": {
+        "title": "Plano Recurso Tipo Envio"
+      },
+      "name": "Name",
+      "descricao": "Descricao",
+      "qtd": "Qtd",
+      "created": "Created",
+      "updated": "Updated",
+      "planoRecurso": "Plano Recurso",
+      "tipoEnvio": "Tipo Envio"
+    }
+  }
+}

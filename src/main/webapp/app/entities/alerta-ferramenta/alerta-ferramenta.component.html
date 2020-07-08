@@ -1,0 +1,89 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="nucleoApp.alertaFerramenta.home.title">Alerta Ferramentas</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-alerta-ferramenta" [routerLink]="['/alerta-ferramenta/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="nucleoApp.alertaFerramenta.home.createLabel">
+            Create a new Alerta Ferramenta
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="alertaFerramentas?.length === 0">
+        <span jhiTranslate="nucleoApp.alertaFerramenta.home.notFound">No alertaFerramentas found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="alertaFerramentas && alertaFerramentas.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="nome"><span jhiTranslate="nucleoApp.alertaFerramenta.nome">Nome</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="descricao"><span jhiTranslate="nucleoApp.alertaFerramenta.descricao">Descricao</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="created"><span jhiTranslate="nucleoApp.alertaFerramenta.created">Created</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="updated"><span jhiTranslate="nucleoApp.alertaFerramenta.updated">Updated</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="alertaId"><span jhiTranslate="nucleoApp.alertaFerramenta.alerta">Alerta</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="ferramentaId"><span jhiTranslate="nucleoApp.alertaFerramenta.ferramenta">Ferramenta</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let alertaFerramenta of alertaFerramentas ;trackBy: trackId">
+                    <td><a [routerLink]="['/alerta-ferramenta', alertaFerramenta.id, 'view']">{{ alertaFerramenta.id }}</a></td>
+                    <td>{{ alertaFerramenta.nome }}</td>
+                    <td>{{ alertaFerramenta.descricao }}</td>
+                    <td>{{ alertaFerramenta.created | date:'medium' }}</td>
+                    <td>{{ alertaFerramenta.updated | date:'medium' }}</td>
+                    <td>
+                        <div *ngIf="alertaFerramenta.alertaId">
+                            <a [routerLink]="['/alerta', alertaFerramenta.alertaId , 'view']" >{{ alertaFerramenta.alertaId }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="alertaFerramenta.ferramentaId">
+                            <a [routerLink]="['/ferramenta', alertaFerramenta.ferramentaId , 'view']" >{{ alertaFerramenta.ferramentaId }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/alerta-ferramenta', alertaFerramenta.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/alerta-ferramenta', alertaFerramenta.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(alertaFerramenta)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="alertaFerramentas && alertaFerramentas.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+        </div>
+    </div>
+</div>

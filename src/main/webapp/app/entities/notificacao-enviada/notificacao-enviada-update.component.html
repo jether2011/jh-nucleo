@@ -1,0 +1,203 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-notificacao-enviada-heading" jhiTranslate="nucleoApp.notificacaoEnviada.home.createOrEditLabel">Create or edit a Notificacao Enviada</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="nucleoApp.notificacaoEnviada.name" for="field_name">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                           formControlName="name"/>
+                    <div *ngIf="editForm.get('name')!.invalid && (editForm.get('name')!.dirty || editForm.get('name')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('name')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('name')?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="nucleoApp.notificacaoEnviada.descricao" for="field_descricao">Descricao</label>
+                    <input type="text" class="form-control" name="descricao" id="field_descricao"
+                           formControlName="descricao"/>
+                    <div *ngIf="editForm.get('descricao')!.invalid && (editForm.get('descricao')!.dirty || editForm.get('descricao')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('descricao')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('descricao')?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="nucleoApp.notificacaoEnviada.destinatarios" for="field_destinatarios">Destinatarios</label>
+                    <input type="text" class="form-control" name="destinatarios" id="field_destinatarios"
+                           formControlName="destinatarios"/>
+                    <div *ngIf="editForm.get('destinatarios')!.invalid && (editForm.get('destinatarios')!.dirty || editForm.get('destinatarios')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('destinatarios')?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="nucleoApp.notificacaoEnviada.tipo" for="field_tipo">Tipo</label>
+                    <input type="text" class="form-control" name="tipo" id="field_tipo"
+                           formControlName="tipo"/>
+                    <div *ngIf="editForm.get('tipo')!.invalid && (editForm.get('tipo')!.dirty || editForm.get('tipo')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('tipo')?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="nucleoApp.notificacaoEnviada.status" for="field_status">Status</label>
+                    <input type="text" class="form-control" name="status" id="field_status"
+                           formControlName="status"/>
+                    <div *ngIf="editForm.get('status')!.invalid && (editForm.get('status')!.dirty || editForm.get('status')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('status')?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="nucleoApp.notificacaoEnviada.assunto" for="field_assunto">Assunto</label>
+                    <input type="text" class="form-control" name="assunto" id="field_assunto"
+                           formControlName="assunto"/>
+                    <div *ngIf="editForm.get('assunto')!.invalid && (editForm.get('assunto')!.dirty || editForm.get('assunto')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('assunto')?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="nucleoApp.notificacaoEnviada.enviado" for="field_enviado">Enviado</label>
+                    <input type="number" class="form-control" name="enviado" id="field_enviado"
+                           formControlName="enviado"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="nucleoApp.notificacaoEnviada.contador" for="field_contador">Contador</label>
+                    <input type="number" class="form-control" name="contador" id="field_contador"
+                           formControlName="contador"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="nucleoApp.notificacaoEnviada.amazonMessageId" for="field_amazonMessageId">Amazon Message Id</label>
+                    <input type="text" class="form-control" name="amazonMessageId" id="field_amazonMessageId"
+                           formControlName="amazonMessageId"/>
+                    <div *ngIf="editForm.get('amazonMessageId')!.invalid && (editForm.get('amazonMessageId')!.dirty || editForm.get('amazonMessageId')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('amazonMessageId')?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="nucleoApp.notificacaoEnviada.amazonDateLog" for="field_amazonDateLog">Amazon Date Log</label>
+                    <div class="d-flex">
+                        <input id="field_amazonDateLog" type="datetime-local" class="form-control" name="amazonDateLog" formControlName="amazonDateLog" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                    <div *ngIf="editForm.get('amazonDateLog')!.invalid && (editForm.get('amazonDateLog')!.dirty || editForm.get('amazonDateLog')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('amazonDateLog')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('amazonDateLog')?.errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                            This field should be a date and time.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="nucleoApp.notificacaoEnviada.priceInUsd" for="field_priceInUsd">Price In Usd</label>
+                    <input type="number" class="form-control" name="priceInUsd" id="field_priceInUsd"
+                           formControlName="priceInUsd"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="nucleoApp.notificacaoEnviada.amazonResposta" for="field_amazonResposta">Amazon Resposta</label>
+                    <input type="text" class="form-control" name="amazonResposta" id="field_amazonResposta"
+                           formControlName="amazonResposta"/>
+                    <div *ngIf="editForm.get('amazonResposta')!.invalid && (editForm.get('amazonResposta')!.dirty || editForm.get('amazonResposta')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('amazonResposta')?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" [translateValues]="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="nucleoApp.notificacaoEnviada.referenceId" for="field_referenceId">Reference Id</label>
+                    <input type="number" class="form-control" name="referenceId" id="field_referenceId"
+                           formControlName="referenceId"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="nucleoApp.notificacaoEnviada.created" for="field_created">Created</label>
+                    <div class="d-flex">
+                        <input id="field_created" type="datetime-local" class="form-control" name="created" formControlName="created" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                    <div *ngIf="editForm.get('created')!.invalid && (editForm.get('created')!.dirty || editForm.get('created')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('created')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('created')?.errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                            This field should be a date and time.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="nucleoApp.notificacaoEnviada.updated" for="field_updated">Updated</label>
+                    <div class="d-flex">
+                        <input id="field_updated" type="datetime-local" class="form-control" name="updated" formControlName="updated" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="nucleoApp.notificacaoEnviada.planoRecurso" for="field_planoRecurso">Plano Recurso</label>
+                    <select class="form-control" id="field_planoRecurso" name="planoRecurso" formControlName="planoRecursoId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="planoRecursoOption.id" *ngFor="let planoRecursoOption of planorecursos; trackBy: trackById">{{ planoRecursoOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

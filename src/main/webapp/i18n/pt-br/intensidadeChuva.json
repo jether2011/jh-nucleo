@@ -1,0 +1,26 @@
+{
+  "nucleoApp": {
+    "intensidadeChuva": {
+      "home": {
+        "title": "Intensidade Chuvas",
+        "createLabel": "Criar novo Intensidade Chuva",
+        "createOrEditLabel": "Criar ou editar Intensidade Chuva",
+        "notFound": "Nenhum Intensidade Chuva encontrado"
+      },
+      "created": "Um novo Intensidade Chuva foi criado com o identificador {{ param }}",
+      "updated": "Um Intensidade Chuva foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Intensidade Chuva foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Intensidade Chuva {{ id }}?"
+      },
+      "detail": {
+        "title": "Intensidade Chuva"
+      },
+      "nome": "Nome",
+      "descricao": "Descricao",
+      "faixa": "Faixa",
+      "created": "Created",
+      "updated": "Updated"
+    }
+  }
+}

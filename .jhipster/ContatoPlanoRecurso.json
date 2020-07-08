@@ -1,0 +1,51 @@
+{
+  "name": "ContatoPlanoRecurso",
+  "fields": [
+    {
+      "fieldName": "nome",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "maxlength", "unique"],
+      "fieldValidateRulesMaxlength": "255"
+    },
+    {
+      "fieldName": "descricao",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "created",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "updated",
+      "fieldType": "Instant"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "contato",
+      "otherEntityRelationshipName": "contatoPlanoRecurso",
+      "relationshipName": "contato",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "planoRecurso",
+      "otherEntityRelationshipName": "contatoPlanoRecurso",
+      "relationshipName": "planoRecurso",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20200708024118",
+  "entityTableName": "contato_plano_recurso",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

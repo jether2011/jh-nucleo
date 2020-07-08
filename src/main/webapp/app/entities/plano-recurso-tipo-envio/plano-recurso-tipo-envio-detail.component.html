@@ -1,0 +1,58 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="planoRecursoTipoEnvio">
+            <h2><span jhiTranslate="nucleoApp.planoRecursoTipoEnvio.detail.title">Plano Recurso Tipo Envio</span> {{ planoRecursoTipoEnvio.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="nucleoApp.planoRecursoTipoEnvio.name">Name</span></dt>
+                <dd>
+                    <span>{{ planoRecursoTipoEnvio.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.planoRecursoTipoEnvio.descricao">Descricao</span></dt>
+                <dd>
+                    <span>{{ planoRecursoTipoEnvio.descricao }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.planoRecursoTipoEnvio.qtd">Qtd</span></dt>
+                <dd>
+                    <span>{{ planoRecursoTipoEnvio.qtd }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.planoRecursoTipoEnvio.created">Created</span></dt>
+                <dd>
+                    <span>{{ planoRecursoTipoEnvio.created }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.planoRecursoTipoEnvio.updated">Updated</span></dt>
+                <dd>
+                    <span>{{ planoRecursoTipoEnvio.updated }}</span>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.planoRecursoTipoEnvio.planoRecurso">Plano Recurso</span></dt>
+                <dd>
+                    <div *ngIf="planoRecursoTipoEnvio.planoRecursoId">
+                        <a [routerLink]="['/plano-recurso', planoRecursoTipoEnvio.planoRecursoId, 'view']">{{ planoRecursoTipoEnvio.planoRecursoId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="nucleoApp.planoRecursoTipoEnvio.tipoEnvio">Tipo Envio</span></dt>
+                <dd>
+                    <div *ngIf="planoRecursoTipoEnvio.tipoEnvioId">
+                        <a [routerLink]="['/tipo-envio', planoRecursoTipoEnvio.tipoEnvioId, 'view']">{{ planoRecursoTipoEnvio.tipoEnvioId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/plano-recurso-tipo-envio', planoRecursoTipoEnvio.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

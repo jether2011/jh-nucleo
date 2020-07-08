@@ -1,0 +1,25 @@
+{
+  "nucleoApp": {
+    "perfil": {
+      "home": {
+        "title": "Perfils",
+        "createLabel": "Criar novo Perfil",
+        "createOrEditLabel": "Criar ou editar Perfil",
+        "notFound": "Nenhum Perfil encontrado"
+      },
+      "created": "Um novo Perfil foi criado com o identificador {{ param }}",
+      "updated": "Um Perfil foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Perfil foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Perfil {{ id }}?"
+      },
+      "detail": {
+        "title": "Perfil"
+      },
+      "name": "Name",
+      "descricao": "Descricao",
+      "created": "Created",
+      "updated": "Updated"
+    }
+  }
+}

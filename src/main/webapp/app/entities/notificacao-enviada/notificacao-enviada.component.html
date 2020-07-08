@@ -1,0 +1,105 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="nucleoApp.notificacaoEnviada.home.title">Notificacao Enviadas</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-notificacao-enviada" [routerLink]="['/notificacao-enviada/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="nucleoApp.notificacaoEnviada.home.createLabel">
+            Create a new Notificacao Enviada
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="notificacaoEnviadas?.length === 0">
+        <span jhiTranslate="nucleoApp.notificacaoEnviada.home.notFound">No notificacaoEnviadas found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="notificacaoEnviadas && notificacaoEnviadas.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="name"><span jhiTranslate="nucleoApp.notificacaoEnviada.name">Name</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="descricao"><span jhiTranslate="nucleoApp.notificacaoEnviada.descricao">Descricao</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="destinatarios"><span jhiTranslate="nucleoApp.notificacaoEnviada.destinatarios">Destinatarios</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="tipo"><span jhiTranslate="nucleoApp.notificacaoEnviada.tipo">Tipo</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="status"><span jhiTranslate="nucleoApp.notificacaoEnviada.status">Status</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="assunto"><span jhiTranslate="nucleoApp.notificacaoEnviada.assunto">Assunto</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="enviado"><span jhiTranslate="nucleoApp.notificacaoEnviada.enviado">Enviado</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="contador"><span jhiTranslate="nucleoApp.notificacaoEnviada.contador">Contador</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="amazonMessageId"><span jhiTranslate="nucleoApp.notificacaoEnviada.amazonMessageId">Amazon Message Id</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="amazonDateLog"><span jhiTranslate="nucleoApp.notificacaoEnviada.amazonDateLog">Amazon Date Log</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="priceInUsd"><span jhiTranslate="nucleoApp.notificacaoEnviada.priceInUsd">Price In Usd</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="amazonResposta"><span jhiTranslate="nucleoApp.notificacaoEnviada.amazonResposta">Amazon Resposta</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="referenceId"><span jhiTranslate="nucleoApp.notificacaoEnviada.referenceId">Reference Id</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="created"><span jhiTranslate="nucleoApp.notificacaoEnviada.created">Created</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="updated"><span jhiTranslate="nucleoApp.notificacaoEnviada.updated">Updated</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="planoRecursoId"><span jhiTranslate="nucleoApp.notificacaoEnviada.planoRecurso">Plano Recurso</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let notificacaoEnviada of notificacaoEnviadas ;trackBy: trackId">
+                    <td><a [routerLink]="['/notificacao-enviada', notificacaoEnviada.id, 'view']">{{ notificacaoEnviada.id }}</a></td>
+                    <td>{{ notificacaoEnviada.name }}</td>
+                    <td>{{ notificacaoEnviada.descricao }}</td>
+                    <td>{{ notificacaoEnviada.destinatarios }}</td>
+                    <td>{{ notificacaoEnviada.tipo }}</td>
+                    <td>{{ notificacaoEnviada.status }}</td>
+                    <td>{{ notificacaoEnviada.assunto }}</td>
+                    <td>{{ notificacaoEnviada.enviado }}</td>
+                    <td>{{ notificacaoEnviada.contador }}</td>
+                    <td>{{ notificacaoEnviada.amazonMessageId }}</td>
+                    <td>{{ notificacaoEnviada.amazonDateLog | date:'medium' }}</td>
+                    <td>{{ notificacaoEnviada.priceInUsd }}</td>
+                    <td>{{ notificacaoEnviada.amazonResposta }}</td>
+                    <td>{{ notificacaoEnviada.referenceId }}</td>
+                    <td>{{ notificacaoEnviada.created | date:'medium' }}</td>
+                    <td>{{ notificacaoEnviada.updated | date:'medium' }}</td>
+                    <td>
+                        <div *ngIf="notificacaoEnviada.planoRecursoId">
+                            <a [routerLink]="['/plano-recurso', notificacaoEnviada.planoRecursoId , 'view']" >{{ notificacaoEnviada.planoRecursoId }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/notificacao-enviada', notificacaoEnviada.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/notificacao-enviada', notificacaoEnviada.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(notificacaoEnviada)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="notificacaoEnviadas && notificacaoEnviadas.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+        </div>
+    </div>
+</div>
